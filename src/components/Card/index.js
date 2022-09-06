@@ -21,7 +21,7 @@ export default function Card({ id, title, description, labels, pinned }) {
   }
 
   return (
-    <div className="w-1/3 p-4 border rounded-lg">
+    <div className="p-4 border rounded-lg " draggable>
       <div className="flex items-start justify-between">
         <div className="font-bold">{title}</div>
         {!pinned ? (
@@ -42,7 +42,7 @@ export default function Card({ id, title, description, labels, pinned }) {
       </div>
       <div className="flex items-center gap-2 mt-2 text-xs font-bold">
         {labels.map((label) => (
-          <div className="px-2 py-1 text-blue-600 truncate bg-blue-300 rounded">
+          <div className="px-2 py-1 text-blue-600 truncate bg-blue-200 rounded">
             {label}
           </div>
         ))}

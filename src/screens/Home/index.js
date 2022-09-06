@@ -20,7 +20,7 @@ export default function Home() {
       {notes.length > 0 ? (
         <>
           <div className="mt-4 mb-4 font-semibold">Pinned Notes</div>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-4 gap-2">
             {notes
               .filter((item) => item.pinned)
               .map((note) => (
@@ -50,7 +50,7 @@ export default function Home() {
       {notes.length > 0 ? (
         <>
           <div className="mt-4 mb-4 font-semibold">All Notes</div>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-4 gap-2">
             {notes
               .filter((item) => !item.pinned)
               .map((note) => (
