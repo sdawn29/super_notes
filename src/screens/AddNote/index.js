@@ -27,8 +27,8 @@ export default function AddNote() {
       title,
       description,
       labels: labelArray,
+      pinned: false,
     };
-    console.log(note);
 
     dispatch(addNote(note));
     navigate("/");

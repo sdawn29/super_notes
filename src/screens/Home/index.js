@@ -19,16 +19,20 @@ export default function Home() {
       <SearchBar />
       {notes.length > 0 ? (
         <>
-          <div className="mt-4 mb-4 font-semibold">All Notes</div>
+          <div className="mt-4 mb-4 font-semibold">Pinned Notes</div>
           <div className="flex flex-wrap gap-2">
-            {notes.map((note) => (
-              <Card
-                key={note.id}
-                title={note.title}
-                description={note.description}
-                labels={note.labels}
-              />
-            ))}
+            {notes
+              .filter((item) => item.pinned)
+              .map((note) => (
+                <Card
+                  key={note.id}
+                  id={note.id}
+                  title={note.title}
+                  description={note.description}
+                  labels={note.labels}
+                  pinned={note.pinned}
+                />
+              ))}
           </div>
         </>
       ) : (
@@ -42,6 +46,27 @@ export default function Home() {
             </Button>
           </div>
         </>
+      )}
+      {notes.length > 0 ? (
+        <>
+          <div className="mt-4 mb-4 font-semibold">All Notes</div>
+          <div className="flex flex-wrap gap-2">
+            {notes
+              .filter((item) => !item.pinned)
+              .map((note) => (
+                <Card
+                  key={note.id}
+                  id={note.id}
+                  title={note.title}
+                  description={note.description}
+                  labels={note.labels}
+                  pinned={note.pinned}
+                />
+              ))}
+          </div>
+        </>
+      ) : (
+        <></>
       )}
     </div>
   );
