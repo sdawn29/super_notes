@@ -4,7 +4,7 @@ export default function SearchBar() {
   return (
     <div>
       <input
-        className="p-2 border rounded w-full border-slate-400 text-sm"
+        className="w-full p-2 text-sm border rounded outline-none border-slate-300"
         placeholder="Search notes"
       ></input>
     </div>

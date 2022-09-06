@@ -6,6 +6,7 @@ const initialState = [
   //     title: "",
   //     description: "",
   //     labels: [],
+  //     pinned: false
   //   },
 ];
 
@@ -16,10 +17,16 @@ export const noteSlice = createSlice({
     addNote: (state, action) => {
       state.push(action.payload);
     },
+    editNote: (state, action) => {
+      state.push(action.payload);
+    },
+    pinNote: (state, action) => {
+      state.push(action.payload);
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addnote } = noteSlice.actions;
+export const { addNote, editNote, pinNote } = noteSlice.actions;
 
 export default noteSlice.reducer;
